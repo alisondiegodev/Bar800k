@@ -1,0 +1,16 @@
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.cad-h1 {
+    text-align: center;
+}
+
+.flex-pai {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
