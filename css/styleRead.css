@@ -17,18 +17,18 @@ body {
 }
 
 main {
-    width: 50vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
+    width: 100%;
 
 }
 
 main h1 {
     color: #24a9ca;
     font-size: 3rem;
-    margin-bottom: 10rem;
+    margin-bottom: 2rem;
 
 }
 
@@ -105,12 +105,12 @@ main form input {
 }
 
 main form input[type="submit"] {
-    display: flex;
+    /* display: flex; */
     width: 150px;
-    padding-left: 49px;
+    /* padding-left: 49px; */
     cursor: pointer;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 3rem;
     border: none;
     border-radius: 32px;
     background: #6c63ff;
