@@ -38,9 +38,9 @@ $result = $con->query($sql);
         <thead>
           <tr>
             <th scope="col"></th>
-            <th scope="col">Nome</th>
-            <th scope="col">E-mail</th>
-            <th scope="col">Senha</th>
+            <th scope="col">Item</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Categoria</th>
             <th scope="col">Comprar</th>
 
           </tr>
