@@ -22,3 +22,81 @@ p {
 #table {
     border-radius: unset;
 }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+}
+
+.header div {
+    display: flex;
+    gap: 30px;
+}
+
+.header p {
+    margin-bottom: unset;
+}
+
+
+
+.botao {
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 32px;
+    background: #6c63ff;
+    color: white;
+    font-size: 1.1rem;
+    transition: all .3s ease-in-out;
+    text-align: center;
+    padding: 10px 40px;
+    text-align: center;
+
+}
+
+.botao:hover {
+    background: #6728bb;
+    color: #fff;
+}
+
+#modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 250px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    display: none;
+}
+
+#modal>div>a,
+#modal>div>button {
+    color: #333;
+    padding: 10px;
+    background: #f3f3f3;
+    border-radius: 10px;
+    text-decoration: none;
+
+}
+
+#modal>div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+}
+
+#modal p {
+    color: #333 !important;
+    text-align: center;
+
+}

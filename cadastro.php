@@ -20,7 +20,6 @@
 
         <main>
             <h1>Criar Conta</h1>
-
             <!-- FORM -->
             <form method="POST" action="salvar.php">
                 <label>
