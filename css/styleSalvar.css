@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,700;1,100;1,200&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     border: 0;
@@ -9,7 +8,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-body{
+body {
     background: #1B2029;
     color: white;
     font-weight: 500;
@@ -17,17 +16,17 @@ body{
     min-height: 10vh;
 }
 
-main{
+main {
     width: 50vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 10rem;
-    color:rgba(0, 81, 255, 0.3);
+    color: rgba(0, 81, 255, 0.3);
 }
 
-  
-  
+
+
 
 main h1 {
     color: #8880fe;
@@ -38,10 +37,12 @@ main h1 {
 main .social-media a {
     text-decoration: none;
 }
+
 main.social-media {
     display: flex;
     align-content: center;
 }
+
 main .social-media img {
     width: 36px;
     margin-left: 3rem;
@@ -57,7 +58,9 @@ main .alternative {
     color: rgba(255, 255, 255, 0.3);
     position: relative;
 }
-main .alternative span::before, main .alternative span::after {
+
+main .alternative span::before,
+main .alternative span::after {
     position: absolute;
     content: '';
     height: 2px;
@@ -70,26 +73,27 @@ main .alternative span::before, main .alternative span::after {
 main .alternative span::after {
     left: 50px;
 }
+
 main form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
-main form label{
+main form label {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main form label span{
+main form label span {
     font-size: 1.1rem;
     margin-top: 1rem;
     flex-direction: column;
 }
 
-main form input{
+main form input {
     background: #161923;
     width: 300px;
     height: 50px;
@@ -116,6 +120,7 @@ main form input[type="submit"] {
     font-size: 1.1rem;
     transition: all .3s ease-in-out;
 }
+
 main form input.submit2[type="submit"] {
     display: flex;
     width: 150px;
@@ -135,25 +140,28 @@ main form input[type="submit"]:hover {
     background: #5952d4;
 
 }
+
 section.images {
     display: flex;
     align-items: center;
     padding: 4rem;
 
 }
+
 section.images {
     width: 50%;
     display: flex;
     justify-content: center;
 }
+
 section.images .circle {
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(45deg,#e8cbc0, #636fa4 );
-    clip-path: circle(37% at right 50% );
+    background: linear-gradient(45deg, #e8cbc0, #636fa4);
+    clip-path: circle(37% at right 50%);
     z-index: -1;
 }
 
@@ -164,7 +172,7 @@ section.images .circle {
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
-     color: #3c763d;
+    color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6
 }
@@ -175,244 +183,42 @@ section.images .circle {
     height: fit-content;
     justify-items: auto;
     margin-top: 1rem;
-   
- 
+
+
 
 
 
 
 }
+
 @keyframes hide {
-    from { opacity: 1 }
-    to   { opacity: 0 }
-  }
-  
-  .animacao {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+.animacao {
     animation: hide 2s 2s forwards;
     padding: 15px;
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
-  }
-  
-  .animacao {
+}
+
+.animacao {
     display: flex;
     justify-content: flex-start;
     color: #ffffff;
     background-color: #ba52d4;
     border-color: #ba52d4;
-   
-  }
-  #bemvindo {
+
+}
+
+#bemvindo {
     display: flex;
     align-items: flex-end;
-=======
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,700;1,100;1,200&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
 }
-
-body{
-    background: #1B2029;
-    color: white;
-    font-weight: 500;
-    display: flex;
-    min-height: 10vh;
-}
-
-main{
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10rem;
-    color:rgba(0, 81, 255, 0.3);
-}
-
-  
-  
-
-main h1 {
-    color: #8880fe;
-    font-size: 3rem;
-    margin-bottom: 3rem;
-}
-
-main .social-media a {
-    text-decoration: none;
-}
-main.social-media {
-    display: flex;
-    align-content: center;
-}
-main .social-media img {
-    width: 36px;
-    margin-left: 3rem;
-}
-
-main .social-media a first-child img {
-    margin-left: 0;
-}
-
-main .alternative {
-    margin-top: 1rem;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.3);
-    position: relative;
-}
-main .alternative span::before, main .alternative span::after {
-    position: absolute;
-    content: '';
-    height: 2px;
-    width: 100px;
-    bottom: 50%;
-    right: 50px;
-    background: rgba(255, 255, 255, 0.3);
-}
-
-main .alternative span::after {
-    left: 50px;
-}
-main form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-
-main form label{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-main form label span{
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    flex-direction: column;
-}
-
-main form input{
-    background: #161923;
-    width: 300px;
-    height: 50px;
-    padding: 0 0.1rem;
-    margin-top: 1rem;
-    outline: none;
-    color: rgb(166, 166, 166);
-    font-size: 1rem;
-    border: 1px solid #040b18;
-    border-radius: 8px;
-}
-
-main form input[type="submit"] {
-    display: flex;
-    width: 150px;
-    padding-left: 49px;
-    cursor: pointer;
-    align-items: center;
-    margin-top: 4rem;
-    border: none;
-    border-radius: 32px;
-    background: #6c63ff;
-    color: white;
-    font-size: 1.1rem;
-    transition: all .3s ease-in-out;
-}
-main form input.submit2[type="submit"] {
-    display: flex;
-    width: 150px;
-    padding-left: 59px;
-    cursor: pointer;
-    align-items: center;
-    margin-top: 4rem;
-    border: none;
-    border-radius: 32px;
-    background: #6c63ff;
-    color: white;
-    font-size: 1.1rem;
-    transition: all .3s ease-in-out;
-}
-
-main form input[type="submit"]:hover {
-    background: #5952d4;
-
-}
-section.images {
-    display: flex;
-    align-items: center;
-    padding: 4rem;
-
-}
-section.images {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-}
-section.images .circle {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(45deg,#e8cbc0, #636fa4 );
-    clip-path: circle(37% at right 50% );
-    z-index: -1;
-}
-
-#animacao {
-
-    animation: hide 2s 2s forwards;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-     color: #3c763d;
-    background-color: #dff0d8;
-    border-color: #d6e9c6
-}
-
-#adicionar.animacao {
-    display: flex;
-    width: fit-content;
-    height: fit-content;
-    justify-items: auto;
-    margin-top: 1rem;
-   
- 
-
-
-
-
-}
-@keyframes hide {
-    from { opacity: 1 }
-    to   { opacity: 0 }
-  }
-  
-  .animacao {
-    animation: hide 2s 2s forwards;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-  }
-  
-  .animacao {
-    display: flex;
-    justify-content: flex-start;
-    color: #ffffff;
-    background-color: #ba52d4;
-    border-color: #ba52d4;
-   
-  }
-  #bemvindo {
-    display: flex;
-    align-items: flex-end;
->>>>>>> 6eb96d8238cdd5fe1e009a6430d7fa0ada500c8d
-  }
