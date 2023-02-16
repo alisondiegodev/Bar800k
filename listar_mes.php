@@ -30,7 +30,8 @@ $fim_mes = date('Y-m-t', strtotime($mes));
 
 
 if (isset($usuario_id)) {
-    $sql_select = "SELECT * FROM compras WHERE id_usuario = '$usuario_id' ORDER BY data_compra DESC LIMIT 10";
+    $sql_select = "SELECT * FROM compras WHERE id_usuario = '$usuario_id' AND data BETWEEN '$inicio_mes' AND '$fim_mes'";
+
     $result = $con->query($sql_select);
 }
 
@@ -67,7 +68,7 @@ if (isset($usuario_id)) {
                 </div>
                 <div class="selecionar">
 
-                    <form action="listar_mes.php" method="POST">
+                    <form action="listar_mes.php" method="GET">
                         <label for="mes">Selecione o mês</label>
                         <input type="month" id="mes" name="mes">
                         <input type="submit" value="Ver Pedidos">
@@ -81,19 +82,32 @@ if (isset($usuario_id)) {
                     <caption>ULTIMOS PEDIDOS</caption>
                     <thead>
                         <tr>
-                            <th scope="col"></th>
+                            <th scope="col">ID</th>
                             <th scope="col">Item</th>
                             <th scope="col">Preço</th>
+                            <th scope="col">Data / Horário</th>
+
 
                         </tr>
                     </thead>
                     <tbody>
                         <?php
+                        if (mysqli_num_rows($result) < 1) {
+                            echo "<tr>";
+                            echo "<td> NADA ENCONTRADO </td>";
+                        };
+
                         while ($compras = mysqli_fetch_assoc($result)) {
+
+                            $data = date('d-m', strtotime($compras['data']));
+                            $hora = date('H:i', strtotime($compras['data']));
+
+
                             echo "<tr>";
                             echo "<td style='display:hidden;'>" . $compras['id_pedido'] . "</td>";
                             echo "<td>" . $compras['item_pedido'] . "</td>";
-                            echo "<td>" . $compras['valor_pedido'] . "</td>";
+                            echo "<td>" . "R$ " . $compras['valor_pedido'] . "</td>";
+                            echo "<td>" . $data . " - " . $hora . "</td>";
                         }
                         ?>
                     </tbody>

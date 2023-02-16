@@ -23,7 +23,7 @@ if (!empty($_SESSION['email'])) {
 }
 
 if (isset($usuario_id)) {
-    $sql_select = "SELECT * FROM compras WHERE id_usuario = '$usuario_id' ORDER BY data_compra DESC LIMIT 10";
+    $sql_select = "SELECT * FROM compras WHERE id_usuario = '$usuario_id' ORDER BY data DESC LIMIT 10";
     $result = $con->query($sql_select);
 }
 
@@ -60,7 +60,7 @@ if (isset($usuario_id)) {
                 </div>
                 <div class="selecionar">
 
-                    <form action="listar_mes.php" method="GET">
+                    <form action="listar_mes.php" method="">
                         <label for="mes">Selecione o mês</label>
                         <input type="month" id="mes" name="mes">
                         <input type="submit" value="Ver Pedidos">
@@ -82,6 +82,7 @@ if (isset($usuario_id)) {
                     </thead>
                     <tbody>
                         <?php
+
                         while ($compras = mysqli_fetch_assoc($result)) {
                             echo "<tr>";
                             echo "<td style='display:hidden;'>" . $compras['id_pedido'] . "</td>";
