@@ -23,7 +23,7 @@ if (!empty($_SESSION['email'])) {
 }
 
 if (isset($usuario_id)) {
-    $sql_select = "SELECT * FROM compras WHERE id_usuario = '$usuario_id'";
+    $sql_select = "SELECT * FROM compras WHERE id_usuario = '$usuario_id' ORDER BY data_compra DESC LIMIT 10";
     $result = $con->query($sql_select);
 }
 
@@ -37,9 +37,10 @@ if (isset($usuario_id)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styleRead.css">
     <link rel="stylesheet" href="global.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
     <style>
 
     </style>
@@ -57,9 +58,20 @@ if (isset($usuario_id)) {
 
                     </div>
                 </div>
+                <div class="selecionar">
 
+                    <form action="listar_mes.php" method="GET">
+                        <label for="mes">Selecione o mês</label>
+                        <input type="month" id="mes" name="mes">
+                        <input type="submit" value="Ver Pedidos">
+
+                    </form>
+
+
+
+                </div>
                 <table class="table caption-top" id=table>
-                    <caption>FAZER NOVA COMPRA</caption>
+                    <caption>ULTIMOS PEDIDOS</caption>
                     <thead>
                         <tr>
                             <th scope="col"></th>

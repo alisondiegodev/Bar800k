@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+body {
+    color: #fff !important
+}
+
 .cad-h1 {
     text-align: center;
 }
@@ -97,6 +101,16 @@ p {
 
 #modal p {
     color: #333 !important;
+    text-align: center;
+
+}
+
+label {
+    color: #fff !important
+}
+
+#mes {
+    background: #e4ebff !important;
     text-align: center;
 
 }
