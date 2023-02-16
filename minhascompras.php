@@ -74,9 +74,10 @@ if (isset($usuario_id)) {
                     <caption>ULTIMOS PEDIDOS</caption>
                     <thead>
                         <tr>
-                            <th scope="col"></th>
+                            <th scope="col">ID</th>
                             <th scope="col">Item</th>
                             <th scope="col">Preço</th>
+                            <th scope="col">Data / Horário</th>
 
                         </tr>
                     </thead>
@@ -84,10 +85,15 @@ if (isset($usuario_id)) {
                         <?php
 
                         while ($compras = mysqli_fetch_assoc($result)) {
+                            $data = date('d-m', strtotime($compras['data']));
+                            $hora = date('H:i', strtotime($compras['data']));
+
+
                             echo "<tr>";
                             echo "<td style='display:hidden;'>" . $compras['id_pedido'] . "</td>";
                             echo "<td>" . $compras['item_pedido'] . "</td>";
-                            echo "<td>" . $compras['valor_pedido'] . "</td>";
+                            echo "<td>" . "R$ " . $compras['valor_pedido'] . "</td>";
+                            echo "<td>" . $data . " - " . $hora . "</td>";
                         }
                         ?>
                     </tbody>

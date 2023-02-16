@@ -75,7 +75,7 @@ $result = $con->query($sql);
               echo "<tr>";
               echo "<td>" . $produtos_lista['id_produto'] . "</td>";
               echo "<td>" . $produtos_lista['nome_produto'] . "</td>";
-              echo "<td>" . $produtos_lista['valor'] . "</td>";
+              echo "<td>" . "R$ " . $produtos_lista['valor'] . "</td>";
               echo "<td>" . $produtos_lista['id_categoria'] . "</td>";
               echo "<td>
                     <button class= ' botaoCompra btn btn-primary' nm='$produtos_lista[nome_produto]' produto_id='$produtos_lista[id_produto]'>

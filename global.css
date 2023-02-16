@@ -105,7 +105,8 @@ p {
 
 }
 
-label {
+label,
+caption {
     color: #fff !important
 }
 

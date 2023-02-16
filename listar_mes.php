@@ -33,6 +33,19 @@ if (isset($usuario_id)) {
     $sql_select = "SELECT * FROM compras WHERE id_usuario = '$usuario_id' AND data BETWEEN '$inicio_mes' AND '$fim_mes'";
 
     $result = $con->query($sql_select);
+
+    $sql_soma = "SELECT SUM(valor_pedido) FROM compras WHERE id_usuario = '$usuario_id' AND data BETWEEN '$inicio_mes' AND '$fim_mes'";
+
+    $result_soma = $con->query($sql_soma);
+
+    $row = $result_soma->fetch_assoc();
+    $soma = $row['SUM(valor_pedido)'];
+
+    if ($soma) {
+        $soma = "R$" . $soma;
+    } else {
+        $soma = " ";
+    }
 }
 
 ?>
@@ -79,7 +92,7 @@ if (isset($usuario_id)) {
 
                 </div>
                 <table class="table caption-top" id=table>
-                    <caption>ULTIMOS PEDIDOS</caption>
+                    <caption>VALOR TOTAL DO MÊS: <?= $soma ?></caption>
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
