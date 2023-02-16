@@ -32,6 +32,6 @@ if (isset($_POST['email'])) {
 
     $_SESSION['email'] = $email;
     $_SESSION['senha'] = $senha;
-    header('Location: usuario.php');
+    header('Location: minhascompras.php');
   }
 }

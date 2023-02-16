@@ -53,7 +53,7 @@ if (isset($usuario_id)) {
                 <div class="header">
                     <p>Bem Vindo <?= $usuario_nome ?>!</p>
                     <div>
-                        <a class="botao" href="./usuario.php">Inicio</a>
+                        <a class="botao" href="./pix.php">Pagar</a>
                         <a class="botao" href="logout.php"> Logout</a>
 
                     </div>

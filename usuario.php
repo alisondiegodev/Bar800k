@@ -51,7 +51,6 @@ $result = $con->query($sql);
         <div class="header">
           <p>Bem Vindo <?= $usuario_nome ?>!</p>
           <div>
-            <a class="botao" href="./minhascompras.php">Minhas Compras</a>
             <a class="botao" href="logout.php"> Logout</a>
 
           </div>
