@@ -1,8 +1,4 @@
 <?php
-if (!isset($_COOKIE['oi']) == true) {
-    header('Location: error.php');
-}
-
 ?>
 <!-- HTML -->
 <!DOCTYPE html>
@@ -12,25 +8,22 @@ if (!isset($_COOKIE['oi']) == true) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="../css/styleLogin.css">
 </head>
 
 <body>
     <div class="flex-rule">
         <main class="mainkey">
-            <h1>Login</h1>
-
-
-
-            <form action="entrar_test.php" method="POST">
+            <h1>LIBERAR COMPRA</h1>
+            <form action="loginadmin.php" method="POST">
                 <label>
-                    <span>E-mail</span>
-                    <input type="email" name="email">
+                    <span>E-mail Admin</span>
+                    <input type="email" name="email_adm">
                 </label>
                 <label>
-                    <span>Password</span>
-                    <input type="password" name="senha">
+                    <span>Password Admin</span>
+                    <input type="password" name="senha_adm">
                 </label>
                 <input type="submit" value="Login">
             </form>

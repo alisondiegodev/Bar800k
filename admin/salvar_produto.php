@@ -44,7 +44,7 @@ if (mysqli_query($con, $result)) { ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="css/styleLogin.css">
+    <link rel="stylesheet" href="../css/styleLogin.css">
 </head>
 
 <body>

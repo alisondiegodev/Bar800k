@@ -28,9 +28,9 @@ if (isset($_POST['email_adm'])) {
     }
     //LOGOU
     else {
-
+        setcookie("oi", 'oi', (time() + (365 * 24 * 3600)), "/");
         $_SESSION['email_adm'] = $email;
         $_SESSION['senha_adm'] = $senha;
-        header('Location: ./admin.php');
+        header('Location: ../comprar/index.php');
     }
 }

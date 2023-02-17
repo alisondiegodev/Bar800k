@@ -17,8 +17,8 @@ $result = $con->query($sql);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema</title>
-  <link rel="stylesheet" href="css/styleRead.css">
-  <link rel="stylesheet" href="./global.css">
+  <link rel="stylesheet" href="../css/styleRead.css">
+  <link rel="stylesheet" href="../global.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 </head>
@@ -40,7 +40,8 @@ $result = $con->query($sql);
   <div class="container">
     <div class="flex-rule">
       <main>
-        <a class="logout" href="logout_adm.php"> Logout</a>
+        <a class="logout botao" href="logout_adm.php"> Logout</a>
+        <br>
         <h1> BEM VINDO
         </h1>
         <p>Area Administrativa</p>

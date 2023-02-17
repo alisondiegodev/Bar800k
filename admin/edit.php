@@ -34,7 +34,7 @@ if (!empty($_GET['id'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="css/styleCadastro.css">
+    <link rel="stylesheet" href="../css/styleCadastro.css">
     <style>
         .voltar {
             display: flex;
@@ -85,7 +85,7 @@ if (!empty($_GET['id'])) {
     </main>
     <!-- ALIEN -->
     <section class="images">
-        <img src="assets/alien2.png" alt="Alien">
+        <img src="../assets/alien2.png" alt="Alien">
     </section>
 
 </body>

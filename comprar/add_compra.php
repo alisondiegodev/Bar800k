@@ -42,5 +42,5 @@ if (!empty($_SESSION['email'] && !empty($_GET['id']))) {
     $sqlCompra = "INSERT INTO compras (item_pedido,valor_pedido,id_usuario,nome_usuario) VALUES ('$nome_produto', '$valor', '$usuario_id', '$usuario_nome')";
     $compraResult = $con->query($sqlCompra);
 
-    header('Location: usuario.php');
+    header('Location: usuario.php?ok=true');
 }

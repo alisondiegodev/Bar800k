@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once 'config.php';
+require_once './config.php';
 if (!isset($_SESSION['email']) || !isset($_SESSION['senha'])) {
 
-  header('Location: login.php');
+  header('Location: entrar.php');
 }
 
 
@@ -36,8 +36,8 @@ $result = $con->query($sql);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema</title>
-  <link rel="stylesheet" href="css/styleRead.css">
-  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="../css/styleRead.css">
+  <link rel="stylesheet" href="../global.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <style>
 
@@ -45,13 +45,18 @@ $result = $con->query($sql);
 </head>
 
 <body>
+  <?php if (isset($_GET['ok'])) {
+    echo "
+    <script>alert('Compra Realizada') </script>
+    ";
+  } ?>
   <div class="container">
     <div class="flex-rule">
       <main>
         <div class="header">
           <p>Bem Vindo <?= $usuario_nome ?>!</p>
           <div>
-            <a class="botao" href="logout.php"> Logout</a>
+            <a class="botao" href="./logout.php"> Logout</a>
 
           </div>
         </div>
@@ -60,7 +65,7 @@ $result = $con->query($sql);
           <caption>FAZER NOVA COMPRA</caption>
           <thead>
             <tr>
-              <th scope="col"></th>
+              <th style="display:none" scope="col"></th>
               <th scope="col">Item</th>
               <th scope="col">Preço</th>
               <th scope="col">Categoria</th>
@@ -72,7 +77,7 @@ $result = $con->query($sql);
             <?php
             while ($produtos_lista = mysqli_fetch_assoc($result)) {
               echo "<tr>";
-              echo "<td>" . $produtos_lista['id_produto'] . "</td>";
+              echo "<td style='display:none'>" . $produtos_lista['id_produto'] . "</td>";
               echo "<td>" . $produtos_lista['nome_produto'] . "</td>";
               echo "<td>" . "R$ " . $produtos_lista['valor'] . "</td>";
               echo "<td>" . $produtos_lista['id_categoria'] . "</td>";
