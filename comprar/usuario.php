@@ -47,11 +47,11 @@ $result = $con->query($sql);
 <body>
   <?php if (isset($_GET['ok'])) {
     echo "
-    <script>alert('Compra Realizada') </script>
+    <p id='animacao'>Compra Realizada!</p>
     ";
   } ?>
   <div class="container">
-    <div class="flex-rule">
+    <div class="flex-rule usuario-div">
       <main>
         <div class="header">
           <p>Bem Vindo <?= $usuario_nome ?>!</p>

@@ -82,6 +82,37 @@ p {
     display: none;
 }
 
+#animacao {
+    color: green;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    font-size: 18px;
+    transform: translate(-50%, 0px);
+    opacity: 0;
+    font-weight: 800;
+    animation: sumir 4.5s linear;
+    text-align: center;
+    border-radius: 30px;
+
+}
+
+@keyframes sumir {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, 0px) scale(1.4);
+    }
+}
+
+.usuario-div {
+    margin-top: 90px;
+}
+
 #modal>div>a,
 #modal>div>button {
     color: #333;
