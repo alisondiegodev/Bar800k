@@ -45,6 +45,14 @@ $result = $con->query($sql);
         <h1> BEM VINDO
         </h1>
         <p>Area Administrativa</p>
+
+        <div class="opcoes">
+          <button id="lista-usuarios">Usuários</button>
+          <button id="cadastrar-produtos">Cadastrar Produtos</button>
+        </div>
+
+
+
         <div class="flex-pai">
           <table class="table caption-top" id=table>
             <caption>USUARIOS</caption>
@@ -77,8 +85,6 @@ $result = $con->query($sql);
                   </td>";
                 echo "</tr>";
               }
-
-
               ?>
             </tbody>
           </table>
