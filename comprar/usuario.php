@@ -40,7 +40,26 @@ $result = $con->query($sql);
   <link rel="stylesheet" href="../global.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <style>
+    .searchDiv {
+      display: flex;
+      gap: 15px;
+    }
 
+    .searchDiv button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      filter: drop-shadow(0px 0px 2px white);
+      background: linear-gradient(271deg, white, #fbfbfb, #fff);
+    }
+
+    .searchDiv input {
+      padding-left: 5px;
+      border-radius: 10px;
+    }
+
+    .searchDiv input:focus-visible {
+      outline: 0.3px solid #e8b0ff;
+    }
   </style>
 </head>
 
@@ -60,7 +79,11 @@ $result = $con->query($sql);
 
           </div>
         </div>
-
+        <div class="searchDiv">
+          <input id="busca" placeholder="Buscar Produto" type="search" />
+          <button id="buscaBtn">Buscar</button>
+          <button id="limpar"> Limpar </button>
+        </div>
         <table class="table caption-top" id=table>
           <caption>FAZER NOVA COMPRA</caption>
           <thead>
@@ -76,7 +99,7 @@ $result = $con->query($sql);
           <tbody>
             <?php
             while ($produtos_lista = mysqli_fetch_assoc($result)) {
-              echo "<tr>";
+              echo "<tr class='trs' produto='$produtos_lista[nome_produto]'>";
               echo "<td style='display:none'>" . $produtos_lista['id_produto'] . "</td>";
               echo "<td>" . $produtos_lista['nome_produto'] . "</td>";
               echo "<td>" . "R$ " . $produtos_lista['valor'] . "</td>";
@@ -98,9 +121,7 @@ $result = $con->query($sql);
           </tbody>
         </table>
 
-        <style>
 
-        </style>
 
         <div id="modal">
           <p>Deseja mesmo comprar 1 item de<br> <span id="produto"></span></p>
@@ -120,7 +141,30 @@ $result = $con->query($sql);
     let confirmar = document.getElementById("confirmar");
     let nao = document.getElementById('nao');
     let modal = document.getElementById('modal');
+    let trs = document.querySelectorAll(".trs");
+    let input = document.querySelector("#busca");
+    let buscaBtn = document.querySelector("#buscaBtn");
+    let limpar = document.querySelector("#limpar");
 
+
+
+
+    buscaBtn.addEventListener("click", () => {
+      var pesquisa = input.value.toLowerCase();
+      console.log(pesquisa)
+
+      trs.forEach((item) => {
+        itemAtribute = item.getAttribute("produto");
+        if (item.attributes.produto.value.toLowerCase().indexOf(pesquisa) > -1) {
+          item.style.display = "table-row";
+        } else {
+          item.style.display = "none";
+        }
+      })
+
+    })
+
+    limpar.addEventListener("click", () => trs.forEach(item => item.style.display = "table-row"))
 
     botaoCompra.forEach(botoes);
 
@@ -142,6 +186,10 @@ $result = $con->query($sql);
       })
     }
   </script>
+
+
+
+
 
 </body>
 
