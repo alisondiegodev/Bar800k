@@ -25,14 +25,28 @@ $result = $con->query($sql);
 
 
 <style>
-  .flex-rule {
+  .opcoes {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
   }
 
-  body {
-    color: #fff !important;
+  .opcoes button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 0px 2px white);
+    background: linear-gradient(271deg, white, #fbfbfb, #fff);
+  }
+
+  .usuarios-div,
+  .cadastro-div {
+    display: none;
+  }
+
+  .usuarios-div {
+    width: max-content;
+    padding: 20px;
   }
 </style>
 
@@ -54,7 +68,7 @@ $result = $con->query($sql);
 
 
         <div class="flex-pai">
-          <table class="table caption-top" id=table>
+          <table class="table caption-top usuarios-div" id=table>
             <caption>USUARIOS</caption>
             <thead>
               <tr>
@@ -90,7 +104,7 @@ $result = $con->query($sql);
           </table>
 
           <!-- CADASTRAR -->
-          <form method="POST" action="salvar_produto.php">
+          <form class="cadastro-div" method="POST" action="salvar_produto.php">
             <h1 class="cad-h1">Cadastrar Novo Produto</h1>
             <label>
               <span>Nome Produto</span>
@@ -108,20 +122,27 @@ $result = $con->query($sql);
               <option value="3">Doces</option>
             </select> <input type="submit" name="submit" value="Cadastrar">
           </form>
-
-
-
-
-
         </div>
-
-
-
       </main>
 
     </div>
   </div>
   <script>
+    let btn_usuarios = document.querySelector("#lista-usuarios");
+    let btn_cad = document.querySelector("#cadastrar-produtos");
+    let user_div = document.querySelector(".usuarios-div");
+    let cad_div = document.querySelector(".cadastro-div");
+
+    btn_usuarios.addEventListener("click", () => {
+      user_div.style.display = "block";
+      cad_div.style.display = "none"
+    })
+    btn_cad.addEventListener("click", () => {
+      user_div.style.display = "none";
+      cad_div.style.display = "flex"
+    })
+
+
     document.getElementById('preco').addEventListener('keypress', function(evt) {
       if (evt.key == ',') {
         evt.preventDefault()

@@ -19,6 +19,16 @@ body {
     width: 100%;
 }
 
+.flex-rule {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+body {
+    color: #fff !important;
+}
+
 p {
     color: #fff;
 }
