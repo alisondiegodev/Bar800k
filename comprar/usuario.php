@@ -39,28 +39,7 @@ $result = $con->query($sql);
   <link rel="stylesheet" href="../css/styleRead.css">
   <link rel="stylesheet" href="../global.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <style>
-    .searchDiv {
-      display: flex;
-      gap: 15px;
-    }
 
-    .searchDiv button {
-      padding: 10px 20px;
-      border-radius: 10px;
-      filter: drop-shadow(0px 0px 2px white);
-      background: linear-gradient(271deg, white, #fbfbfb, #fff);
-    }
-
-    .searchDiv input {
-      padding-left: 5px;
-      border-radius: 10px;
-    }
-
-    .searchDiv input:focus-visible {
-      outline: 0.3px solid #e8b0ff;
-    }
-  </style>
 </head>
 
 <body>
@@ -80,9 +59,9 @@ $result = $con->query($sql);
           </div>
         </div>
         <div class="searchDiv">
-          <input id="busca" placeholder="Buscar Produto" type="search" />
+          <input id="busca" placeholder="Nome Produto" type="search" />
           <button id="buscaBtn">Buscar</button>
-          <button id="limpar"> Limpar </button>
+          <button id="limpar"> Limpar Filtro </button>
         </div>
         <table class="table caption-top" id=table>
           <caption>FAZER NOVA COMPRA</caption>
@@ -115,14 +94,10 @@ $result = $con->query($sql);
                   </td>";
               echo "</tr>";
             }
-
-
             ?>
           </tbody>
         </table>
-
-
-
+        <h6 id="searchNotFound">NENHUM ITEM CORRESPONDE A PESQUISA</h6>
         <div id="modal">
           <p>Deseja mesmo comprar 1 item de<br> <span id="produto"></span></p>
           <div>
@@ -131,9 +106,7 @@ $result = $con->query($sql);
           </div>
         </div>
       </main>
-
     </div>
-
   </div>
 
   <script>
@@ -145,26 +118,38 @@ $result = $con->query($sql);
     let input = document.querySelector("#busca");
     let buscaBtn = document.querySelector("#buscaBtn");
     let limpar = document.querySelector("#limpar");
-
-
-
+    let searchNotFound = document.getElementById("searchNotFound");
 
     buscaBtn.addEventListener("click", () => {
       var pesquisa = input.value.toLowerCase();
-      console.log(pesquisa)
-
+      limpar.style.display = "block";
+      var result = 0;
       trs.forEach((item) => {
         itemAtribute = item.getAttribute("produto");
         if (item.attributes.produto.value.toLowerCase().indexOf(pesquisa) > -1) {
           item.style.display = "table-row";
+          result++;
+          console.log(result);
         } else {
           item.style.display = "none";
         }
-      })
 
+        if (result == 0) {
+          searchNotFound.style.display = "block";
+        } else {
+          searchNotFound.style.display = "none";
+
+        }
+
+      })
     })
 
-    limpar.addEventListener("click", () => trs.forEach(item => item.style.display = "table-row"))
+    limpar.addEventListener("click", () => {
+      trs.forEach(item => item.style.display = "table-row");
+      limpar.style.display = "none";
+      searchNotFound.style.display = "none";
+
+    })
 
     botaoCompra.forEach(botoes);
 
