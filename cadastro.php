@@ -14,7 +14,6 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="css/styleCadastro.css">
     <link rel="stylesheet" href="./global.css">
-
 </head>
 
 <body>

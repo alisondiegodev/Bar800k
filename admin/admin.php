@@ -24,37 +24,11 @@ $result = $con->query($sql);
 </head>
 
 
-<style>
-  .opcoes {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
-  }
-
-  .opcoes button {
-    padding: 10px 20px;
-    border-radius: 10px;
-    filter: drop-shadow(0px 0px 2px white);
-    background: linear-gradient(271deg, white, #fbfbfb, #fff);
-  }
-
-  .usuarios-div,
-  .cadastro-div {
-    display: none;
-  }
-
-  .usuarios-div {
-    width: max-content;
-    padding: 20px;
-  }
-</style>
-
 <body>
   <div class="container">
     <div class="flex-rule">
-      <main>
-        <a class="logout botao" href="logout_adm.php"> Logout</a>
+      <main class="mt-2">
+        <a class="logout botao mt-2 " href="logout_adm.php"> Logout</a>
         <br>
         <h1> BEM VINDO
         </h1>
