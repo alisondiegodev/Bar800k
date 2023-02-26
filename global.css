@@ -1,10 +1,17 @@
 .container {
     width: 1400px;
+    max-width: 97vw;
+    padding: 0 !important;
     margin: 0 auto;
 }
 
 body {
     color: #fff !important
+}
+
+html,
+body {
+    overflow-x: hidden;
 }
 
 .cad-h1 {
@@ -37,12 +44,16 @@ p {
     border-radius: unset;
 }
 
+
+
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    width: 100%;
+    width: 85%;
+    margin-top: 27px;
+    margin-bottom: 20px;
 }
 
 .header div {
@@ -191,4 +202,35 @@ caption {
 
 .mt-2 {
     margin-top: 20px;
+}
+
+.displaynone {
+    display: none;
+}
+
+tr {
+    height: 50px !important;
+}
+
+td {
+    width: 30% !important;
+}
+
+table {
+    width: 90% !important;
+    margin-left: -3% !important;
+}
+
+.pad {
+    padding: 10px 20px !important;
+}
+
+@media (max-width: 450px) {
+    input[type="submit"] {
+        margin-top: 1rem !important;
+    }
+
+    table {
+        margin-top: 15px;
+    }
 }

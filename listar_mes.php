@@ -74,8 +74,7 @@ if (isset($usuario_id)) {
                 <div class="header">
                     <p>Bem Vindo <?= $usuario_nome ?>!</p>
                     <div>
-                        <a class="botao" href="./usuario.php">Inicio</a>
-                        <a class="botao" href="logout.php"> Logout</a>
+                        <a class="botao pad" href="logout.php"> Logout</a>
 
                     </div>
                 </div>
@@ -95,7 +94,7 @@ if (isset($usuario_id)) {
                     <caption>VALOR TOTAL DO MÊS: <?= $soma ?></caption>
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
+                            <th class="displaynone" scope="col">ID</th>
                             <th scope="col">Item</th>
                             <th scope="col">Preço</th>
                             <th scope="col">Data / Horário</th>
@@ -117,7 +116,7 @@ if (isset($usuario_id)) {
 
 
                             echo "<tr>";
-                            echo "<td style='display:hidden;'>" . $compras['id_pedido'] . "</td>";
+                            echo "<td class='displaynone'>" . $compras['id_pedido'] . "</td>";
                             echo "<td>" . $compras['item_pedido'] . "</td>";
                             echo "<td>" . "R$ " . $compras['valor_pedido'] . "</td>";
                             echo "<td>" . $data . " - " . $hora . "</td>";

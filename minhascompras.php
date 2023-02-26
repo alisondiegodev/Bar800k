@@ -39,7 +39,7 @@ if (isset($usuario_id)) {
     <title>Sistema</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styleRead.css">
-    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="./global.css">
 
     <style>
 
@@ -53,9 +53,7 @@ if (isset($usuario_id)) {
                 <div class="header">
                     <p>Bem Vindo <?= $usuario_nome ?>!</p>
                     <div>
-                        <a class="botao" href="./pix.php">Pagar</a>
-                        <a class="botao" href="logout.php"> Logout</a>
-
+                        <a class="botao pad" href="logout.php"> Logout</a>
                     </div>
                 </div>
                 <div class="selecionar">
@@ -71,9 +69,9 @@ if (isset($usuario_id)) {
                     <caption>ULTIMOS PEDIDOS</caption>
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
+                            <th class="displaynone" scope="col">ID</th>
                             <th scope="col">Item</th>
-                            <th scope="col">Preço</th>
+                            <!-- <th scope="col">Preço</th> -->
                             <th scope="col">Data / Horário</th>
 
                         </tr>
@@ -85,10 +83,10 @@ if (isset($usuario_id)) {
                             $data = date('d-m', strtotime($compras['data']));
                             $hora = date('H:i', strtotime($compras['data']));
                             echo "<tr>";
-                            echo "<td style='display:hidden;'>" . $compras['id_pedido'] . "</td>";
+                            echo "<td class='displaynone'>" . $compras['id_pedido'] . "</td>";
                             echo "<td>" . $compras['item_pedido'] . "</td>";
-                            echo "<td>" . "R$ " . $compras['valor_pedido'] . "</td>";
-                            echo "<td>" . $data . " - " . $hora . "</td>";
+                            // echo "<td>" . "R$ " . $compras['valor_pedido'] . "</td>";
+                            echo "<td>" . $data . " | " . $hora . "</td>";
                         }
                         ?>
                     </tbody>

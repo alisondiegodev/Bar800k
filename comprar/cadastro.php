@@ -37,6 +37,7 @@ if (!isset($_COOKIE['oi']) == true) {
                 </label>
                 <input type="submit" name="submit" value="Cadastrar">
             </form>
+            <p class="mt-2">Já tem uma conta? <a class="link" href="./login.php">Faça login.</a></p>
 
         </main>
         <!-- ALIEN -->
