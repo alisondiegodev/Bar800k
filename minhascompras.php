@@ -66,9 +66,6 @@ if (isset($usuario_id)) {
                         <input type="submit" value="Ver Pedidos">
 
                     </form>
-
-
-
                 </div>
                 <table class="table caption-top" id=table>
                     <caption>ULTIMOS PEDIDOS</caption>
@@ -87,8 +84,6 @@ if (isset($usuario_id)) {
                         while ($compras = mysqli_fetch_assoc($result)) {
                             $data = date('d-m', strtotime($compras['data']));
                             $hora = date('H:i', strtotime($compras['data']));
-
-
                             echo "<tr>";
                             echo "<td style='display:hidden;'>" . $compras['id_pedido'] . "</td>";
                             echo "<td>" . $compras['item_pedido'] . "</td>";

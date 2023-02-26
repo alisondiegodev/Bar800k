@@ -13,6 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="css/styleCadastro.css">
+    <link rel="stylesheet" href="./global.css">
+
 </head>
 
 <body>
@@ -34,6 +36,8 @@
                 </label>
                 <input type="submit" name="submit" value="Cadastrar">
             </form>
+            <p class="mt-2">Já tem uma conta? <a class="link" href="./login.php">Faça login.</a></p>
+
 
         </main>
         <!-- ALIEN -->

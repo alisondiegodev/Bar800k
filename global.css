@@ -182,3 +182,13 @@ caption {
 #searchNotFound {
     display: none;
 }
+
+.link {
+    color: #d060ff;
+    text-decoration: unset;
+
+}
+
+.mt-2 {
+    margin-top: 20px;
+}

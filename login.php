@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="css/styleLogin.css">
+    <link rel="stylesheet" href="./global.css">
 </head>
 
 <body>
@@ -30,6 +31,7 @@
                 </label>
                 <input type="submit" value="Login">
             </form>
+            <p class="mt-2">Ainda não tem conta? <a class="link" href="./cadastro.php">Cadastre-se.</a></p>
 
         </main>
         <section class="images">
