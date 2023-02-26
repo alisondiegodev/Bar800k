@@ -1,7 +1,6 @@
 <?php
 
 ?>
-<!-- HTML -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
