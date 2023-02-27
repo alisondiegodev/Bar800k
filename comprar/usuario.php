@@ -37,7 +37,7 @@ $result = $con->query($sql);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema</title>
   <link rel="stylesheet" href="../css/styleRead.css">
-  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../global.css?cache=2">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 </head>
@@ -61,8 +61,9 @@ $result = $con->query($sql);
         <div class="searchDiv">
           <input id="busca" placeholder="Nome Produto" type="search" />
           <button id="buscaBtn">Buscar</button>
-          <button id="limpar"> Limpar Filtro </button>
         </div>
+        <button class="botao2 mt-2" id="limpar"> Limpar Filtro </button>
+
         <table class="table caption-top" id=table>
           <caption>FAZER NOVA COMPRA</caption>
           <thead>
