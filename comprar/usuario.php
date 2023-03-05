@@ -161,7 +161,6 @@ $result = $con->query($sql);
         var tbody = document.querySelector("#carrinho tbody");
 
         let quantidade = "1";
-        // document.getElementById('produto').innerHTML = nomeProduto;
         modal.style.display = 'flex';
 
         var item = {
@@ -189,11 +188,6 @@ $result = $con->query($sql);
 
         }
         tbody.innerHTML = html;
-
-        console.log(carrinho);
-
-
-
 
         nao.addEventListener('click', () => {
           modal.style.display = 'none';
