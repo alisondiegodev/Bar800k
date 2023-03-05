@@ -95,10 +95,9 @@ p {
 }
 
 #modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: fixed;
+    margin: auto;
+    inset: 0;
     width: 350px;
     height: 250px;
     background-color: #fff;
@@ -263,6 +262,43 @@ table {
 
 main {
     width: 100% !important;
+}
+
+#modal {
+    color: #000 !important;
+}
+
+.plus {
+    width: 25px;
+    border-radius: 15px;
+}
+
+#carrinho>tbody>tr>td>input,
+.rm {
+
+    width: 25px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    margin-right: 4px;
+}
+
+.rm {
+    border-radius: 50%;
+}
+
+.modal-cart {
+    width: max-content !important;
+    height: max-content !important;
+    padding: 20px 10px !important;
+}
+
+.pdr-65 {
+    padding-right: 65px;
+}
+
+.pdr-20 {
+    padding-right: 20px;
 }
 
 @media (max-width: 450px) {
