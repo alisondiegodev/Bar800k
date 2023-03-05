@@ -128,6 +128,11 @@ $result = $con->query($sql);
     </div>
   </div>
 
+  <form action="add_compra.php" method="POST" id="form">
+    <input type="hidden" name="carrinhoCheckout" value="">
+  </form>
+
+
   <script>
     const botaoCompra = document.querySelectorAll(".botaoCompra");
     let confirmar = document.getElementById("confirmar");
@@ -152,6 +157,9 @@ $result = $con->query($sql);
         let nomeProduto = btn.getAttribute('nm');
         let idProduto = btn.getAttribute('produto_id');
         let valorProduto = btn.getAttribute('valor');
+        let table = document.querySelector("#carrinho");
+        var tbody = document.querySelector("#carrinho tbody");
+
         let quantidade = "1";
         // document.getElementById('produto').innerHTML = nomeProduto;
         modal.style.display = 'flex';
@@ -164,29 +172,28 @@ $result = $con->query($sql);
         };
 
         carrinho.push(item);
+        tbody.remove();
+        var new_tbody = document.createElement("tbody");
+        table.appendChild(new_tbody);
+        var tbody = document.querySelector("#carrinho tbody");
+        html = "";
 
-        // for (var i = 0; i < carrinho.length; i++) {
-        html += "<tr>";
-        html += `<td> ${item.nome} </td>`;
-        html += `<td> ${item.valor} </td>`;
-        html += `<td><button onclick="this.parentNode.querySelector('input').stepDown() "class='plus'>-</button> <input disabled type='number' value='${item.quantidade}' min='1' max='5' onchange='atualizarQuantidade(${item.id}, this.value)'><button onclick="this.parentNode.querySelector('input').stepUp() "class='plus'>+</button></td>`;
-        html += `<td> <button class='rm' onclick='removerItem(${item.id})'>X</button></td>`;
-        html += "</tr>";
+        for (var i = 0; i < carrinho.length; i++) {
+          html += "<tr>";
+          html += `<td> ${carrinho[i].nome} </td>`;
+          html += `<td> ${carrinho[i].valor} </td>`;
+          html += `<td><button onclick="this.parentNode.querySelector('input').stepDown();atualizarQuantidade(${carrinho[i].id},this.parentNode.querySelector('input').value) "class='plus'>-</button> <input disabled type='number' value='${carrinho[i].quantidade}' min='1' max='5' onchange='atualizarQuantidade(${carrinho[i].id}, this.value)'><button onclick="this.parentNode.querySelector('input').stepUp();;atualizarQuantidade(${carrinho[i].id},this.parentNode.querySelector('input').value) "class='plus'>+</button></td>`;
+          html += `<td> <button class='rm' onclick='removerItem(${carrinho[i].id}); this.parentNode.parentNode.remove()'>X</button></td>`;
+          html += "</tr>";
 
 
-        // }
+        }
         tbody.innerHTML = html;
 
-        console.log(html);
-
-
-
-
+        console.log(carrinho);
 
 
         confirmar.addEventListener('click', () => {
-
-
 
         })
 
@@ -195,6 +202,21 @@ $result = $con->query($sql);
         })
 
       })
+    }
+
+    function atualizarQuantidade(id, qtd) {
+      for (var i = 0; i < carrinho.length; i++) {
+        if (carrinho[i].id == id) {
+          carrinho[i].quantidade = qtd;
+          console.log(carrinho);
+        }
+      }
+    }
+
+    function removerItem(id) {
+      carrinho = carrinho.filter(iterar => iterar.id != id);
+      console.log(carrinho)
+
     }
 
 
@@ -217,9 +239,7 @@ $result = $con->query($sql);
           searchNotFound.style.display = "block";
         } else {
           searchNotFound.style.display = "none";
-
         }
-
       })
     })
 
