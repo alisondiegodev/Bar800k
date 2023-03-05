@@ -129,7 +129,7 @@ $result = $con->query($sql);
   </div>
 
   <form action="add_compra.php" method="POST" id="form">
-    <input type="hidden" name="carrinhoCheckout" value="">
+    <input id="form-input" type="hidden" name="carrinho" value="">
   </form>
 
 
@@ -193,9 +193,7 @@ $result = $con->query($sql);
         console.log(carrinho);
 
 
-        confirmar.addEventListener('click', () => {
 
-        })
 
         nao.addEventListener('click', () => {
           modal.style.display = 'none';
@@ -218,7 +216,12 @@ $result = $con->query($sql);
       console.log(carrinho)
 
     }
-
+    confirmar.addEventListener('click', () => {
+      let form = document.querySelector("#form");
+      let input_carrinho = document.querySelector("#form-input");
+      input_carrinho.value = JSON.stringify(carrinho);
+      form.submit()
+    })
 
     //FUNCIONALIDADE SEARCH
     buscaBtn.addEventListener("click", () => {
