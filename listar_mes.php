@@ -61,10 +61,6 @@ if (isset($usuario_id)) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styleRead.css">
     <link rel="stylesheet" href="global.css">
-
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -86,9 +82,6 @@ if (isset($usuario_id)) {
                         <input type="submit" value="Ver Pedidos">
 
                     </form>
-
-
-
                 </div>
                 <table class="table caption-top" id=table>
                     <caption>VALOR TOTAL DO MÊS: <?= $soma ?></caption>
@@ -99,8 +92,6 @@ if (isset($usuario_id)) {
                             <th scope="col">Quantidade</th>
                             <th scope="col">Preço</th>
                             <th scope="col">Data / Horário</th>
-
-
                         </tr>
                     </thead>
                     <tbody>
@@ -111,11 +102,8 @@ if (isset($usuario_id)) {
                         };
 
                         while ($compras = mysqli_fetch_assoc($result)) {
-
                             $data = date('d-m', strtotime($compras['data']));
                             $hora = date('H:i', strtotime($compras['data']));
-
-
                             echo "<tr>";
                             echo "<td class='displaynone'>" . $compras['id_pedido'] . "</td>";
                             echo "<td>" . $compras['item_pedido'] . "</td>";

@@ -1,6 +1,6 @@
 .container {
     width: 1400px;
-    max-width: 97vw;
+    max-width: 100vw;
     padding: 0 !important;
     margin: 0 auto;
 }
@@ -221,6 +221,7 @@ caption {
 
 tr {
     height: 50px !important;
+    border-color: #6e6d857a;
 }
 
 td {
@@ -228,7 +229,7 @@ td {
 }
 
 table {
-    width: 90% !important;
+    width: 100% !important;
 }
 
 .pad {
