@@ -37,7 +37,7 @@ $result = $con->query($sql);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema</title>
   <link rel="stylesheet" href="../css/styleRead.css">
-  <link rel="stylesheet" href="../global.css?cache=7">
+  <link rel="stylesheet" href="../global.css?cache=8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 </head>
@@ -63,9 +63,19 @@ $result = $con->query($sql);
           <button id="buscaBtn">Buscar</button>
         </div>
         <button class="botao2 mt-2" id="limpar"> Limpar Filtro </button>
+        <div class="filtrar">
+          <p>Filtrar Por Categoria</p>
+          <select id="categorias" name="categoria">
+            <option value="1">Bebidas</option>
+            <option value="2">Salgados</option>
+            <option value="3">Doces</option>
+          </select>
 
+        </div>
         <table class="table caption-top" id=table>
+
           <caption>FAZER NOVA COMPRA</caption>
+
           <thead>
             <tr>
               <th style="display:none" scope="col"></th>
@@ -79,7 +89,7 @@ $result = $con->query($sql);
           <tbody>
             <?php
             while ($produtos_lista = mysqli_fetch_assoc($result)) {
-              echo "<tr class='trs' produto='$produtos_lista[nome_produto]'>";
+              echo "<tr class='trs' categoria='$produtos_lista[id_categoria]' produto='$produtos_lista[nome_produto]'>";
               echo "<td style='display:none'>" . $produtos_lista['id_produto'] . "</td>";
               echo "<td>" . $produtos_lista['nome_produto'] . "</td>";
               echo "<td>" . "R$ " . $produtos_lista['valor'] . "</td>";
@@ -159,6 +169,21 @@ $result = $con->query($sql);
         let valorProduto = btn.getAttribute('valor');
         let table = document.querySelector("#carrinho");
         var tbody = document.querySelector("#carrinho tbody");
+        var filtrar = document.getElementById("categorias");
+        console.log(filtrar);
+        alert("OI");
+
+        filtrar.addEventListener("change", () => {
+          trs.forEach((item) => {
+            itemCategoria = item.getAttribute("categoria");
+            if (item.attributes.categoria == filtrar.value) {
+              console.log(filtrar.value)
+              console.log(item)
+
+            }
+
+          })
+        })
 
         let quantidade = "1";
         modal.style.display = 'flex';

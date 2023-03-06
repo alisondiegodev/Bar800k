@@ -236,6 +236,16 @@ table {
     padding: 10px 20px !important;
 }
 
+.filtrar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.filtrar select {
+    border-radius: 10px;
+}
 
 .opcoes {
     display: flex;
