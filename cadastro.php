@@ -25,13 +25,13 @@
             <form method="POST" action="salvar.php">
                 <label>
                     <span>Nome Completo</span>
-                    <input type="text" name="nome">
+                    <input required type="text" name="nome">
                 </label>
                 <span>E-mail</span>
-                <input type="email" name="email">
+                <input required type="email" name="email">
                 </label>
                 <span>Senha</span>
-                <input minlength="6" type="password" name="senha">
+                <input minlength="6" required type="password" name="senha">
                 </label>
                 <input type="submit" name="submit" value="Cadastrar">
             </form>

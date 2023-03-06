@@ -16,6 +16,8 @@ if (!isset($_COOKIE['oi']) == true) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="../css/styleCadastro.css">
+    <link rel="stylesheet" href="../global.css">
+
 </head>
 
 <body>
@@ -27,17 +29,17 @@ if (!isset($_COOKIE['oi']) == true) {
             <form method="POST" action="salvar.php">
                 <label>
                     <span>Nome Completo</span>
-                    <input type="text" name="nome">
+                    <input required type="text" name="nome">
                 </label>
                 <span>E-mail</span>
-                <input type="email" name="email">
+                <input required type="email" name="email">
                 </label>
                 <span>Senha</span>
-                <input minlength="6" type="password" name="senha">
+                <input required minlength="6" type="password" name="senha">
                 </label>
                 <input type="submit" name="submit" value="Cadastrar">
             </form>
-            <p class="mt-2">Já tem uma conta? <a class="link" href="./login.php">Faça login.</a></p>
+            <p class="mt-2">Já tem uma conta? <a class="link" href="./entrar.php">Faça login.</a></p>
 
         </main>
         <!-- ALIEN -->

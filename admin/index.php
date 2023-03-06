@@ -19,11 +19,11 @@
             <form action="loginadmin.php" method="POST">
                 <label>
                     <span>E-mail</span>
-                    <input type="email" name="email_adm">
+                    <input required type="email" name="email_adm">
                 </label>
                 <label>
                     <span>Password</span>
-                    <input type="password" name="senha_adm">
+                    <input required type="password" name="senha_adm">
                 </label>
                 <input type="submit" value="Login">
             </form>

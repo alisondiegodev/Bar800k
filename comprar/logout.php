@@ -2,4 +2,4 @@
 session_start();
 unset($_SESSION['email']);
 unset($_SESSION['senha']);
-header('Location: ./entrar.php');
+header('Location: ./index.php');

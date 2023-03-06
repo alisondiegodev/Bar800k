@@ -29,11 +29,11 @@ if (!isset($_COOKIE['oi']) == true) {
             <form action="entrar_test.php" method="POST">
                 <label>
                     <span>E-mail</span>
-                    <input type="email" name="email">
+                    <input required type="email" name="email">
                 </label>
                 <label>
                     <span>Password</span>
-                    <input type="password" name="senha">
+                    <input required type="password" name="senha">
                 </label>
                 <input type="submit" value="Login">
             </form>
