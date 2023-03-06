@@ -60,7 +60,7 @@ if (isset($usuario_id)) {
 
                     <form action="listar_mes.php" method="">
                         <label for="mes">Selecione o mês</label>
-                        <input type="month" id="mes" name="mes">
+                        <input id="mes" value="" type="month" id="mes" name="mes">
                         <input type="submit" value="Ver Pedidos">
 
                     </form>
@@ -97,6 +97,12 @@ if (isset($usuario_id)) {
 
         </div>
     </div>
+    <script>
+        month = new Date();
+        monthString = month.toLocaleDateString("pt-br", {})
+        monthArray = monthString.split("/");
+        document.getElementById("mes").value = monthArray[2] + "-" + monthArray[1];
+    </script>
 
 </body>
 
