@@ -30,7 +30,7 @@ $result = $con->query($sql);
       <main class="mt-2">
         <a class="logout botao mt-2 " href="logout_adm.php"> Logout</a>
         <br>
-        <h1> BEM VINDO
+        <h1> SISTEMA BAR 800K
         </h1>
         <p>Area Administrativa</p>
 
