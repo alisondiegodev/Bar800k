@@ -1,4 +1,8 @@
-Já tem uma conta? Clique Aqui.
-Ver pedidos mostrar mes atual como default
-Pagina de comprar
-Carrinho
+Botao de fechar no modal de compra
+função de adicionar valores adicionais na pagina admin
+função de adicionar valores avulsos na pagina admin
+listar na pagina admin os valores que cada usuario tem pra pagar e suas compras clicando em cada um
+listar ultimas compras realizadas por todos os usuarios 
+função enviar email para os usuarios do bar com o valor do mês 
+
+extra >> salvar compras em uma planilha google docs
