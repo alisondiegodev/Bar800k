@@ -241,10 +241,17 @@ table {
     justify-content: center;
     margin-top: 20px;
     gap: 10px;
+    align-items: center;
+    height: 50px;
+}
+
+.filtrar p {
+    margin-bottom: unset;
 }
 
 .filtrar select {
     border-radius: 10px;
+    height: 40px;
 }
 
 .opcoes {

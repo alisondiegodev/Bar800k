@@ -43,11 +43,7 @@ $result = $con->query($sql);
 </head>
 
 <body>
-  <?php if (isset($_GET['ok'])) {
-    echo "
-    <p id='animacao'>Compra Realizada!</p>
-    ";
-  } ?>
+
   <div class="container">
     <div class="flex-rule usuario-div">
       <main>
@@ -64,8 +60,9 @@ $result = $con->query($sql);
         </div>
         <button class="botao2 mt-2" id="limpar"> Limpar Filtro </button>
         <div class="filtrar">
-          <p>Filtrar Por Categoria</p>
+          <p>Filtro Categoria</p>
           <select id="categorias" name="categoria">
+            <option value="0">Nenhum</option>
             <option value="1">Bebidas</option>
             <option value="2">Salgados</option>
             <option value="3">Doces</option>
@@ -157,8 +154,35 @@ $result = $con->query($sql);
     var html = "";
     let carrinho = [];
     let htmlArray
+    var filtrar = document.querySelector("#categorias");
 
 
+
+    filtrar.addEventListener("change", () => {
+
+      if (filtrar.value == 1) {
+        selected = "Bebidas";
+      }
+      if (filtrar.value == 2) {
+        selected = "Salgados";
+      }
+      if (filtrar.value == 3) {
+        selected = "Doces";
+      }
+
+      trs.forEach((item) => {
+        if (item.attributes.categoria.value == selected) {
+          item.style.display = "table-row";
+        } else {
+          item.style.display = "none";
+        }
+      })
+      if (filtrar.value == 0) {
+        trs.forEach((item) => {
+          item.style.display = "table-row";
+        })
+      }
+    })
     //CARRINHO
     botaoCompra.forEach(botoes);
 
@@ -169,21 +193,8 @@ $result = $con->query($sql);
         let valorProduto = btn.getAttribute('valor');
         let table = document.querySelector("#carrinho");
         var tbody = document.querySelector("#carrinho tbody");
-        var filtrar = document.getElementById("categorias");
-        console.log(filtrar);
-        alert("OI");
 
-        filtrar.addEventListener("change", () => {
-          trs.forEach((item) => {
-            itemCategoria = item.getAttribute("categoria");
-            if (item.attributes.categoria == filtrar.value) {
-              console.log(filtrar.value)
-              console.log(item)
 
-            }
-
-          })
-        })
 
         let quantidade = "1";
         modal.style.display = 'flex';
