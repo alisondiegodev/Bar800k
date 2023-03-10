@@ -37,6 +37,10 @@ $result = $con->query($sql);
         <div class="opcoes">
           <button id="lista-usuarios">Usuários</button>
           <button id="cadastrar-produtos">Cadastrar Produtos</button>
+          <button id="ultimas-compras">Ultimas Compras</button>
+          <button id="emails">Enviar E-Mails</button>
+          <button id="relacao">Relação Mensal</button>
+
         </div>
 
 
