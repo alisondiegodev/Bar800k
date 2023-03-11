@@ -26,7 +26,6 @@ if (isset($_POST['carrinho'])) {
 
     foreach ($carrinho as $item) {
 
-
         $qtd = $item['quantidade'];
         $valor = $item['valor'];
         $valor_final = $qtd * $valor;

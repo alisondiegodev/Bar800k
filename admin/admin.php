@@ -7,6 +7,11 @@ if (!isset($_SESSION['email_adm']) || !isset($_SESSION['senha_adm'])) {
 }
 $sql = "SELECT * FROM usuarios ORDER BY id DESC";
 $result = $con->query($sql);
+
+
+$sqlCompras = "SELECT * FROM compras ORDER BY id_pedido DESC LIMIT 20";
+$result_sql = $con->query($sqlCompras);
+
 ?>
 <!-- HTML -->
 <!DOCTYPE html>
@@ -17,12 +22,15 @@ $result = $con->query($sql);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/styleRead.css">
   <link rel="stylesheet" href="../global.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
+  <style>
+    #table {
+      background: unset;
+    }
+  </style>
 </head>
-
 
 <body>
   <div class="container">
@@ -38,8 +46,8 @@ $result = $con->query($sql);
           <button id="lista-usuarios">Usuários</button>
           <button id="cadastrar-produtos">Cadastrar Produtos</button>
           <button id="ultimas-compras">Ultimas Compras</button>
-          <button id="emails">Enviar E-Mails</button>
           <button id="relacao">Relação Mensal</button>
+          <button id="emails">Enviar E-Mails</button>
 
         </div>
 
@@ -100,6 +108,58 @@ $result = $con->query($sql);
               <option value="3">Doces</option>
             </select> <input type="submit" name="submit" value="Cadastrar">
           </form>
+
+          <!-- ULTIMAS COMPRAS -->
+          <table class="table caption-top ultimas-div" id=ultimas-div>
+            <caption>ULTIMAS COMPRAS</caption>
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Horário</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              while ($ultimas_compras = mysqli_fetch_assoc($result_sql)) {
+                $data = date('d-m', strtotime($ultimas_compras['data']));
+                $hora = date('H:i', strtotime($ultimas_compras['data']));
+                echo "<tr>";
+                echo "<td>" . $ultimas_compras['item_pedido'] . "</td>";
+                echo "<td>" . $ultimas_compras['quantidade'] . "</td>";
+                echo "<td>" . $ultimas_compras['nome_usuario'] . "</td>";
+                echo "<td>" . $data . " - " . $hora . "</td>";
+              }
+              ?>
+            </tbody>
+          </table>
+
+          <!-- ULTIMAS COMPRAS -->
+          <table class="table caption-top ultimas-div" id=ultimas-div>
+            <caption>RELAÇÃO MENSAL</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Valor com desconto</th>
+                <th scope="col">Valor com multa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              while ($ultimas_compras = mysqli_fetch_assoc($result_sql)) {
+                $data = date('d-m', strtotime($ultimas_compras['data']));
+                $hora = date('H:i', strtotime($ultimas_compras['data']));
+                echo "<tr>";
+                echo "<td>" . $ultimas_compras['item_pedido'] . "</td>";
+                echo "<td>" . $ultimas_compras['quantidade'] . "</td>";
+                echo "<td>" . $ultimas_compras['nome_usuario'] . "</td>";
+                echo "<td>" . $data . " - " . $hora . "</td>";
+              }
+              ?>
+            </tbody>
+          </table>
+
         </div>
       </main>
 
@@ -108,16 +168,27 @@ $result = $con->query($sql);
   <script>
     let btn_usuarios = document.querySelector("#lista-usuarios");
     let btn_cad = document.querySelector("#cadastrar-produtos");
+    let btn_ultimas = document.querySelector("#ultimas-compras")
+    let ultimas_div = document.querySelector("#ultimas-div");
     let user_div = document.querySelector(".usuarios-div");
     let cad_div = document.querySelector(".cadastro-div");
+    let relacao = document.querySelector("#relacao");
 
+
+    btn_ultimas.addEventListener("click", () => {
+      cad_div.style.display = "none"
+      user_div.style.display = "none";
+      ultimas_div.style.display = "block";
+    })
     btn_usuarios.addEventListener("click", () => {
       user_div.style.display = "block";
       cad_div.style.display = "none"
+      ultimas_div.style.display = "none";
     })
     btn_cad.addEventListener("click", () => {
       user_div.style.display = "none";
       cad_div.style.display = "flex"
+      ultimas_div.style.display = "none";
     })
 
 
