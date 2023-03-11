@@ -270,7 +270,8 @@ table {
 
 .usuarios-div,
 .cadastro-div,
-.ultimas-div {
+.ultimas-div,
+.relacao-div {
     display: none;
 }
 

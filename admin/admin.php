@@ -48,11 +48,7 @@ $result_sql = $con->query($sqlCompras);
           <button id="ultimas-compras">Ultimas Compras</button>
           <button id="relacao">Relação Mensal</button>
           <button id="emails">Enviar E-Mails</button>
-
         </div>
-
-
-
         <div class="flex-pai">
           <table class="table caption-top usuarios-div" id=table>
             <caption>USUARIOS</caption>
@@ -135,30 +131,16 @@ $result_sql = $con->query($sqlCompras);
             </tbody>
           </table>
 
-          <!-- ULTIMAS COMPRAS -->
-          <table class="table caption-top ultimas-div" id=ultimas-div>
-            <caption>RELAÇÃO MENSAL</caption>
-            <thead>
-              <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">Valor com desconto</th>
-                <th scope="col">Valor com multa</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-              while ($ultimas_compras = mysqli_fetch_assoc($result_sql)) {
-                $data = date('d-m', strtotime($ultimas_compras['data']));
-                $hora = date('H:i', strtotime($ultimas_compras['data']));
-                echo "<tr>";
-                echo "<td>" . $ultimas_compras['item_pedido'] . "</td>";
-                echo "<td>" . $ultimas_compras['quantidade'] . "</td>";
-                echo "<td>" . $ultimas_compras['nome_usuario'] . "</td>";
-                echo "<td>" . $data . " - " . $hora . "</td>";
-              }
-              ?>
-            </tbody>
-          </table>
+
+          <div id="relacao-div" class="selecionar relacao-div">
+
+            <form action="relacao.php" method="GET">
+              <label for="mes">Selecione o mês</label>
+              <input type="month" id="mes" name="mes">
+              <input type="submit" value="Visualizar">
+
+            </form>
+          </div>
 
         </div>
       </main>
@@ -173,22 +155,36 @@ $result_sql = $con->query($sqlCompras);
     let user_div = document.querySelector(".usuarios-div");
     let cad_div = document.querySelector(".cadastro-div");
     let relacao = document.querySelector("#relacao");
+    let relacao_div = document.querySelector("#relacao-div");
 
 
+
+    relacao.addEventListener("click", () => {
+      relacao_div.style.display = "block";
+      cad_div.style.display = "none"
+      user_div.style.display = "none";
+      ultimas_div.style.display = "none";
+    })
     btn_ultimas.addEventListener("click", () => {
       cad_div.style.display = "none"
       user_div.style.display = "none";
       ultimas_div.style.display = "block";
+      relacao_div.style.display = "none";
+
     })
     btn_usuarios.addEventListener("click", () => {
       user_div.style.display = "block";
       cad_div.style.display = "none"
       ultimas_div.style.display = "none";
+      relacao_div.style.display = "none";
+
     })
     btn_cad.addEventListener("click", () => {
       user_div.style.display = "none";
       cad_div.style.display = "flex"
       ultimas_div.style.display = "none";
+      relacao_div.style.display = "none";
+
     })
 
 
@@ -198,6 +194,14 @@ $result_sql = $con->query($sqlCompras);
         alert('Não aceita virgula, apenas ponto!');
       }
     });
+
+    month = new Date();
+    monthString = month.toLocaleDateString("pt-br", {})
+    monthArray = monthString.split("/");
+    mes = parseInt(monthArray[1]);
+    mes = mes - 1;
+    mes = "0" + mes.toString();
+    document.getElementById("mes").value = monthArray[2] + "-" + mes;
   </script>
 
 </body>
