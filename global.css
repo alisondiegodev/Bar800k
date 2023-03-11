@@ -269,13 +269,18 @@ table {
 }
 
 .usuarios-div,
-.cadastro-div {
+.cadastro-div,
+.ultimas-div {
     display: none;
 }
 
 .usuarios-div {
     width: max-content;
     padding: 20px;
+}
+
+.ultimas-div {
+    color: #fff !important;
 }
 
 main {
